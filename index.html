@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Divya</title>
+
+<style>
+body{
+text-align:center;
+font-family:Arial;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+overflow:hidden;
+}
+
+h1{
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.1)}
+100%{transform:scale(1)}
+}
+
+#cake{
+font-size:100px;
+cursor:pointer;
+margin-top:20px;
+}
+
+#message{
+display:none;
+margin-top:20px;
+background:rgba(255,255,255,0.2);
+padding:20px;
+border-radius:10px;
+}
+
+.confetti{
+position:absolute;
+font-size:25px;
+animation:fall 3s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-100px)}
+100%{transform:translateY(800px)}
+}
+
+.gallery img{
+width:200px;
+border-radius:10px;
+margin:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🎂 Happy Birthday Divya 🎉</h1>
+
+<p>Click the cake to start the surprise!</p>
+
+<div id="cake" onclick="start()">🎂</div>
+
+<div id="confetti"></div>
+
+<button onclick="showMessage()">Open Surprise Message</button>
+
+<div id="message">
+⚠️ Warning! Today you're at high risk of being ambushed by kisses,
+hugs and way too much love.
+Happy Birthday Divya 🎂❤️🎉
+</div>
+
+<h3>Birthday Song 🎵</h3>
+
+<audio controls>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
+
+<h2>📸 Memories</h2>
+
+<div class="gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+</div>
+
+<script>
+
+function start(){
+document.getElementById("cake").innerHTML="🍰";
+
+for(let i=0;i<30;i++){
+let c=document.createElement("div");
+c.className="confetti";
+c.innerHTML="🎉";
+c.style.left=Math.random()*100+"%";
+document.body.appendChild(c);
+}
+}
+
+function showMessage(){
+document.getElementById("message").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
